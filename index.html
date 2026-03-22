@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профсоюз студентов КГТУ им. В.А. Дегтярева</title>
+    <link rel="icon" href="images/favicon2.png" type="image/x-icon">
+    <!-- Подключение шрифта Rubik -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <style>
+        /* ========== ОБЩИЕ СТИЛИ ========== */
+        :root {
+            --theme-9: #2c3e50;       /* Темно-синий */
+            --theme-10: #ffffff;       /* Белый */
+            --spacing-20: 1.25rem;     /* 20px */
+            --spacing-80: 5rem;        /* 80px */
+            --font-xx-large: 2.5rem;   /* 40px */
+            --accent: #3498db;          /* Голубой акцент */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Rubik", sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: #333;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        p, li {
+            font-size: 18px;
+        }
+
+        /* ========== ШАПКА ========== */
+        .header-section {
+            background: var(--theme-9);
+            color: var(--theme-10);
+            padding: var(--spacing-20) 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-contents {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            position: relative;
+			gap: 20px;
+        }
+
+        .site-title {
+            color: var(--theme-10);
+            font-size: 30px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .header-nav {
+            display: flex;
+        }
+
+        .header-nav a {
+            color: var(--theme-10);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: opacity 0.3s;
+        }
+
+        .header-nav a:hover {
+            opacity: 0.8;
+        }
+
+        .burger {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .header-logo {
+            flex-shrink: 0;
+        }
+
+		.header-logo img {
+			width: 40px;
+			height: auto;
+			display: block;
+		}
+
+        /* ========== ГЕРОЙ ========== */
+        .hero-section {
+            background: var(--theme-9);
+            color: var(--theme-10);
+            text-align: center;
+            padding: var(--spacing-80) 20px;
+        }
+
+        .hero-content {
+            max-width: 1060px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 60px;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Полноэкранное изображение */
+        .fullscreen-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        /* ========== СЕКЦИЯ О НАС ========== */
+        .about-section {
+            padding: 80px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .about-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .about-text h2 span {
+            display: inline-block;
+            position: relative;
+        }
+
+        .about-text h2 span span {
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #3498db;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .about-content p {
+            margin: 0;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .about-content strong {
+            color: #2c3e50;
+        }
+
+        .about-image img {
+            border-radius: 10px;
+            width: 537px;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        /* ========== СЕКЦИЯ ДОКУМЕНТЫ ========== */
+        .documents-section {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .documents-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title span {
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-title span span {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #3498db;
+        }
+
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .document-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .document-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .document-card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .document-card h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin: 0 0 20px;
+        }
+
+        .document-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .document-card-text {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .document-card-text p,
+        .document-card-text ul {
+            margin: 0;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .document-card-text ul {
+            padding-left: 20px;
+        }
+
+        .document-card .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.3s;
+            align-self: flex-start;
+            margin-top: auto;
+        }
+
+        .document-card .btn:hover {
+            background: #217dbb;
+        }
+
+        /* ========== СЕКЦИЯ КОМАНДА ========== */
+        .team-section {
+            padding: 80px 20px;
+            background: #ffffff;
+        }
+
+        .team-container {
+            max-width: 1600px;
+            margin: 0 auto;
+			padding: 0 20px;
+        }
+
+        .team-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			width: 100%;
+            gap: 30px;
+            justify-items: center;
+            margin-bottom: 40px;
+        }
+
+        .team-member {
+            text-align: center;
+            max-width: 280px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .photo-container {
+            position: relative;
+            width: 250px;
+            height: 400px;
+            margin: 0 auto 20px;
+            border-radius: 10%;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .main-photo,
+        .meme-photo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.4s ease;
+        }
+
+        .meme-photo {
+            opacity: 0;
+        }
+
+        /* Десктоп: ховер */
+        @media (hover: hover) and (pointer: fine) {
+            .team-member:hover .meme-photo {
+                opacity: 1;
+            }
+        }
+
+        .team-member h3 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin: 0 0 5px;
+        }
+
+        .team-member .role {
+            color: #3498db;
+            font-weight: 500;
+            margin: 0 0 10px;
+        }
+
+        .team-member .description {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* ========== КОНТАКТЫ И ГРАФИК ========== */
+        .contact-section {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .contact-card {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-card h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .contact-card h2 span {
+            display: inline-block;
+            position: relative;
+        }
+
+        .contact-card h2 span span {
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #3498db;
+        }
+
+        .schedule-item,
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .schedule-item {
+            margin-bottom: 15px;
+        }
+
+        .icon {
+            font-size: 1.5rem;
+            color: #3498db;
+        }
+
+        .schedule-item p,
+        .contact-item p {
+            margin: 0;
+        }
+
+        .schedule-item strong,
+        .contact-item strong {
+            color: #2c3e50;
+        }
+
+        .schedule-item p:first-of-type,
+        .contact-item p:first-of-type {
+            font-weight: 600;
+            margin: 0 0 5px 0;
+            color: #2c3e50;
+        }
+
+        .schedule-item p:last-of-type,
+        .contact-item p:last-of-type {
+            margin: 0;
+            color: #555;
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+        }
+
+        .contact-item a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .after-hours {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f0f7ff;
+            border-radius: 8px;
+        }
+
+        .after-hours p {
+            margin: 0 0 15px 0;
+            color: #555;
+            font-style: italic;
+        }
+
+        .vk-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background: #0077ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .vk-button:hover {
+            background: #005bb5;
+        }
+
+        /* ========== НОВОСТИ ========== */
+        .announcements-section {
+            padding: 100px 20px;
+            background: #ffffff;
+        }
+
+        .announcements-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .main-news {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .main-news-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+
+        .main-news-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .main-news-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .main-news-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .main-news-text h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .main-news-text h2 span {
+            display: inline-block;
+            position: relative;
+        }
+
+        .main-news-text h2 span span {
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: #3498db;
+        }
+
+        .main-news-text p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            position: relative;
+            border-radius: 15px;
+            border: 1px solid #eee;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: white;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.01);
+        }
+
+        .news_image {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .news_image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover .news_image img {
+            transform: scale(1.05);
+        }
+
+        /* Модальное окно новостей */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: auto;
+            padding: 25px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 700px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #222;
+        }
+
+        .modal-content p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .modal-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .modal-button:hover {
+            background-color: #217dbb;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #888;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* ========== ПОДВАЛ ========== */
+        .partners-footer {
+            padding: 40px 20px;
+            background: #2c3e50;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .partner-logo a {
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            height: 100px;
+            transition: all 0.3s;
+        }
+
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(100%) opacity(80%);
+            transition: all 0.3s;
+        }
+
+        .partner-logo:hover img {
+            filter: grayscale(0%) opacity(100%);
+            transform: scale(1.05);
+        }
+
+        .copyright {
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            margin-top: 50px;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* ========== АДАПТАЦИЯ ========== */
+        @media (max-width: 768px) {
+            /* Шапка */
+            .header-section {
+                padding: 10px 0;
+            }
+
+            .site-title {
+				font-size: 18px;  /* чуть меньше */
+				white-space: normal; /* можно переносить */
+				max-width: 200px;  /* ограничиваем ширину */
+			}
+
+            .burger {
+                display: block;
+                position: absolute;
+                right: 10px;
+                top: -15px;
+                z-index: 1001;
+                width: clamp(36px, 8vw, 50px);
+                height: clamp(36px, 8vw, 50px);
+                padding: clamp(6px, 2vw, 10px);
+            }
+
+            .header-nav {
+                display: none;
+                flex-direction: column;
+                background-color: var(--theme-9);
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                padding: 10px 0;
+                z-index: 1000;
+            }
+
+            .header-nav a {
+                padding: 10px 20px;
+                font-size: 18px;
+                text-align: left;
+            }
+
+            .header-nav.active {
+                display: flex;
+            }
+
+            .header-logo {
+                left: 15px;
+                top: -10px;
+            }
+
+            /* Герой */
+            .hero-section {
+                padding: 24px 20px 48px;
+            }
+
+            .hero-title {
+                font-size: 40px;
+                margin-top: 15px;
+            }
+
+            .hero-description {
+                font-size: 20px;
+            }
+
+            /* О нас */
+            .about-image img {
+                width: 90vw;
+                margin: 0;
+            }
+
+            /* Команда: горизонтальный скролл */
+            .team-row {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                gap: 20px;
+                padding-bottom: 20px;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .team-row .team-member {
+                flex: 0 0 auto;
+                width: 280px;
+                scroll-snap-align: start;
+            }
+
+            .photo-container {
+                width: 100%;
+                height: 400px;
+            }
+
+            /* Отключаем hover на мобильных */
+            .team-member:hover .meme-photo {
+                opacity: 0;
+            }
+
+            /* Класс для показа мема по клику */
+            .team-member.show-meme .meme-photo {
+                opacity: 1;
+            }
+            .team-member.show-meme .main-photo {
+                opacity: 0;
+            }
+
+            /* Подвал партнеров */
+            .partners-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ШАПКА -->
+    <div class="header-section">
+        <header class="header-contents">
+            <div class="header-logo">
+                <img src="images/Logo.png" alt="Лого">
+            </div>
+            <div class="header-group">
+                <a href="https://профсоюзкгта.рф/" class="site-title">Профсоюз студентов КГТУ</a>
+            </div>
+            <button class="burger" onclick="toggleMenu()">☰</button>
+            <nav class="header-nav" id="header-nav">
+                <a href="javascript:void(0)" onclick="scrollAndClose(0)">Главная</a>
+                <a href="#about-section" onclick="scrollAndClose()">О нас</a>
+                <a href="#documents-section" onclick="scrollAndClose()">Документы</a>
+                <a href="#team-section" onclick="scrollAndClose()">Команда</a>
+                <a href="#contact-section" onclick="scrollAndClose()">Контакты</a>
+                <a href="#announcements-section" onclick="scrollAndClose()">Новости</a>
+            </nav>
+        </header>
+    </div>
+
+    <!-- ГЕРОЙ С ИЗОБРАЖЕНИЕМ -->
+	<div class="hero-wrapper" style="position: relative; width: 100%;">
+		<!-- Изображение -->
+		<img src="images/Общее фото.jpg" alt="Фоновое изображение" style="width: 100%; height: auto; display: block;">
+		
+		<!-- Текст поверх картинки -->
+		<div class="hero-content-overlay" style="position: absolute; top: 20px; left: 0; width: 100%; text-align: center; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+			<h2 class="hero-title">Профсоюз студентов КГТУ имени В.А. Дегтярева</h2>
+			<p class="hero-description">
+				Добро пожаловать на официальный сайт первичной профсоюзной организации 
+				студентов Ковровской Государственной Технологической Университет 
+				имени В. А. Дегтярева
+			</p>
+		</div>
+	</div>
+
+    <!-- О НАС -->
+    <section class="about-section" id="about-section">
+        <div class="about-columns">
+            <div class="about-text">
+                <h2><span>О нас<span></span></span></h2>
+                <div class="about-content">
+                    <p><strong>Плыть по течению, оставить в воспоминаниях лучшие годы жизни или сделать их по-настоящему насыщенными?</strong> Мы выбираем второй вариант и предлагаем вам присоединиться!</p>
+                    <p><strong>Мы объединились для того, чтобы вместе решать важные вопросы</strong>, защищать права студентов и создавать комфортные условия для учебы и развития.</p>
+                    <p><strong>Союз студентов КГТА существует более 30 лет</strong> и за это время помог тысячам студентов реализовать свои идеи и защитить свои права.</p>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="images/student desk in a classroom.jpg" alt="Student desk in a classroom">
+            </div>
+        </div>
+    </section>
+
+    <!-- ДОКУМЕНТЫ -->
+    <section class="documents-section" id="documents-section">
+        <div class="documents-container">
+            <h2 class="section-title"><span>Документы для студентов<span></span></span></h2>
+            <div class="documents-grid">
+                <!-- Материальная помощь -->
+                <div class="document-card">
+                    <div class="document-card-content">
+                        <h3>Материальная помощь</h3>
+                        <img src="images/letter_18599206.png" alt="Иконка">
+                        <div class="document-card-text">
+                            <p>Материальная поддержка может быть оказана студентам, оказавшимся в трудной жизненной ситуации.</p>
+                            <p>На получение материальной помощи имеют право все студенты, состоящие в профсоюзе.</p>
+                            <p>Решение об оказании материальной помощи принимает профсоюзный комитет.</p>
+                        </div>
+                        <a href="https://vk.com/s/v1/doc/_kxuZvVbze4AUHzEAO6In7MXvE5BvYbKDZicD8FBoyJcDhloeIo" target="_blank" class="btn">Открыть</a>
+                    </div>
+                </div>
+                <!-- ПГАС -->
+                <div class="document-card">
+                    <div class="document-card-content">
+                        <h3>ПГАС</h3>
+                        <img src="images/letter_18599206.png" alt="Иконка">
+                        <div class="document-card-text">
+                            <p>Повышенную стипендию могут получить студенты, достигшие успехов в различных видах деятельности.</p>
+                            <p>Повышенная академическая стипендия назначается за достижения в:</p>
+                            <ul>
+                                <li>учебной деятельности</li>
+                                <li>научно-исследовательской работе</li>
+                                <li>общественной деятельности</li>
+                                <li>культурно-творческой деятельности</li>
+                                <li>спортивных достижениях</li>
+                            </ul>
+                        </div>
+                        <a href="https://vk.ru/doc-1458108_699253087?hash=IpJ2lIlBNZInYiSTZ3qyoNekRwgvUOdZBODNVcIXVBH&dl=6fva1mlZgZBm46VzzW92SuCikkP774jzdEr0QgeAVwk&api=1&no_preview=1" target="_blank" class="btn">Открыть</a>
+                    </div>
+                </div>
+                <!-- Вступление в профсоюз -->
+                <div class="document-card">
+                    <div class="document-card-content">
+                        <h3>Вступление в профсоюз</h3>
+                        <img src="images/letter_18599206.png" alt="Иконка">
+                        <div class="document-card-text">
+                            <p>Стань частью профсоюзной организации и получи доступ ко всем возможностям и поддержке.</p>
+                            <p>Члены профсоюза имеют право на материальную помощь, льготы и юридическую поддержку.</p>
+                        </div>
+                        <a href="https://vk.com/s/v1/doc/vErrEYmptqw2zclF4sv4wcNiKRaSSj0YU0W-IgPR4h-2eP7_pJo" target="_blank" class="btn">Открыть</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- КОМАНДА (обновлённая) -->
+    <section class="team-section" id="team-section">
+        <div class="team-container">
+            <h2 class="section-title"><span>Наша Команда<span></span></span></h2>
+
+            <!-- Первая строка -->
+            <div class="team-row">
+                <!-- Член команды 1 -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Толя.jpg" alt="Жук Анатолий" class="main-photo">
+                        <img src="images/Толя_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Жук Анатолий</h3>
+                    <div class="role">Председатель</div>
+                    <div class="description">Координирует работу профкома студентов</div>
+                </div>
+                <!-- Член команды 2 -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Асотова.jpg" alt="Асотова Анна" class="main-photo">
+                        <img src="images/Асотова_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Асотова Анна</h3>
+                    <div class="role">Заместитель председателя</div>
+                    <div class="description">Курирует правовую и организационную работу</div>
+                </div>
+                <!-- Член команды 3 -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Диана.jpg" alt="Мальцева Диана" class="main-photo">
+                        <img src="images/Диана_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Мальцева Диана</h3>
+                    <div class="role">Заместитель председателя</div>
+                    <div class="description">Курирует информационную работу, взаимодействует с председателями профбюро</div>
+                </div>
+				<!-- Член команды 4 -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Регина.jpg" alt="Эргашева Регина" class="main-photo">
+                        <img src="images/Регина_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Эргашева Регина</h3>
+                    <div class="role">Секретарь</div>
+                    <div class="description">Ведёт протоколы собраний профкома</div>
+                </div>
+                <!-- Член команды 5 -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Лукашов.jpg" alt="Лукашов Артур" class="main-photo">
+                        <img src="images/Лукашов_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Лукашов Артур</h3>
+                    <div class="role">Председатель совета обучающихся</div>
+                    <div class="description">Курирует деятельность совета обучающихся вуза</div>
+                </div>
+				
+            </div>
+
+            <!-- Вторая строка -->
+            <div class="team-row">
+                <!-- Член команды 6 -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Бобровникова.jpg" alt="Бобровникова Анна" class="main-photo">
+                        <img src="images/Бобровникова_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Бобровникова Анна</h3>
+                    <div class="role">Председатель культурно-массовой комиссии</div>
+                    <div class="description">Курирует организацию досуговых мероприятий для студентов</div>
+                </div>
+                <!-- Член команды 7 -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Марина.jpg" alt="Серова Марина" class="main-photo">
+                        <img src="images/Марина_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Серова Марина</h3>
+                    <div class="role">Организационно-массовая комиссия</div>
+                    <div class="description">Курирует социальные сети организации</div>
+                </div>
+				<!-- Член команды 7 -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Устинова.jpg" alt="Устинова Наташа" class="main-photo">
+                        <img src="images/Устинова_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Устинова Наташа</h3>
+                    <div class="role">Информационная комиссия</div>
+                    <div class="description">Курирует социальные сети организации</div>
+                </div>
+				<!-- Член команды 7 -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Китус.jpg" alt="Китус Денис" class="main-photo">
+                        <img src="images/Китус_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Китус Денис</h3>
+                    <div class="role">Информационная комиссия</div>
+                    <div class="description">Курирует социальные сети организации</div>
+                </div>
+				<!-- Член команды 7 -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Тулупова.jpg" alt="Тулупова Екатерина" class="main-photo">
+                        <img src="images/Тулупова_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Тулупова Екатерина</h3>
+                    <div class="role">Информационная комиссия</div>
+                    <div class="description">Курирует социальные сети организации</div>
+                </div>
+                <!-- Член команды 8 -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Дима.jpg" alt="Морсин Дмитрий" class="main-photo">
+                        <img src="images/Дима_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Морсин Дмитрий</h3>
+                    <div class="role">Председатель студсовета общежития</div>
+                    <div class="description">Координирует деятельность студенческого совета в общежитии академии</div>
+                </div>
+				<!-- Член команды * -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Дудрова.jpg" alt="Дудрова Мария" class="main-photo">
+                        <img src="images/Дудрова_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Дудрова Мария</h3>
+                    <div class="role">Заместитель председателя совета обучающихся</div>
+                    <div class="description">Курирует организацию досуговых мероприятий для студентов</div>
+                </div>
+            </div>
+            <!-- Третья строка -->
+            <div class="team-row">
+                <!-- Член команды 9 -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Сашка.jpg" alt="Коровин Александр" class="main-photo">
+                        <img src="images/Сашка_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Коровин Александр</h3>
+                    <div class="role">Председатель профбюро фАиЭ</div>
+                    <div class="description">Курирует деятельность организации на факультете автоматики и электроники</div>
+                </div>
+				<!-- Член команды * -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Иванова.jpg" alt="Иванова Дарья" class="main-photo">
+                        <img src="images/Иванова_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Иванова Дарья</h3>
+                    <div class="role">Заместитель председателя профбюро фАиЭ</div>
+                    <div class="description">Курирует деятельность организации на факультете автоматики и электроники</div>
+                </div>
+                <!-- Член команды 10 -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Илья.jpg" alt="Червяков Илья" class="main-photo">
+                        <img src="images/Илья_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Червяков Илья</h3>
+                    <div class="role">Председатель профбюро МТФ</div>
+                    <div class="description">Курирует деятельность организации на механико-технологическом факультете</div>
+                </div>
+				<!-- Член команды * -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Рябинин.jpg" alt="Рябинин Михаил" class="main-photo">
+                        <img src="images/Рябинин_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Рябинин Михаил</h3>
+                    <div class="role">Заместитель председателя профбюро МТФ</div>
+                    <div class="description">Курирует деятельность организации на механико-технологическом факультете</div>
+                </div>
+                <!-- Член команды 11 -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Андрей.jpg" alt="Глухов Андрей" class="main-photo">
+                        <img src="images/Андрей_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Глухов Андрей</h3>
+                    <div class="role">Председатель профбюро фЭиМ</div>
+                    <div class="description">Курирует деятельность организации на факультете экономики и менеджмента</div>
+                </div>
+				<!-- Член команды * -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Сухецкий.jpg" alt="Сухецкий Даниил" class="main-photo">
+                        <img src="images/Сухецкий_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Сухецкий Даниил</h3>
+                    <div class="role">Заместитель председателя профбюро фЭиМ</div>
+                    <div class="description">Курирует деятельность организации на факультете экономики и менеджмента</div>
+                </div>
+                <!-- Член команды 12 -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Элёр.jpg" alt="Рахимкулов Элёр" class="main-photo">
+                        <img src="images/Элёр_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Рахимкулов Элёр</h3>
+                    <div class="role">Председатель контрольно-ревизионной комиссии</div>
+                    <div class="description">Курирует деятельность организации в энергомеханическом колледже</div>
+                </div>
+				<!-- Член команды * -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Краснова.jpg" alt="Краснова Юлия" class="main-photo">
+                        <img src="images/Краснова_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Краснова Юлия</h3>
+                    <div class="role">Член контрольно-ревизионной комиссии</div>
+                    <div class="description">Курирует деятельность организации в энергомеханическом колледже</div>
+                </div>
+				<!-- Член команды * -->
+                <div class="team-member" onclick="toggleMeme(this)">
+                    <div class="photo-container">
+                        <img src="images/Андреева.jpg" alt="Андреева Анастасия" class="main-photo">
+                        <img src="images/Андреева_meme.jpg" alt="мем" class="meme-photo">
+                    </div>
+                    <h3>Андреева Анастасия</h3>
+                    <div class="role">Член контрольно-ревизионной комиссии</div>
+                    <div class="description">Курирует деятельность организации в энергомеханическом колледже</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- КОНТАКТЫ И ГРАФИК -->
+    <section class="contact-section" id="contact-section">
+        <div class="contact-container">
+            <!-- График работы -->
+            <div class="contact-card">
+                <h2><span>Наш график работы<span></span></span></h2>
+                <div class="schedule-item">
+                    <div class="icon">🕘</div>
+                    <div>
+                        <p>Понедельник - пятница</p>
+                        <p>с 09:00 до 17:00 (обед 12:00 - 13:00)</p>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <div class="icon">🚪</div>
+                    <div>
+                        <p>Суббота, воскресенье</p>
+                        <p>выходной</p>
+                    </div>
+                </div>
+                <div class="after-hours">
+                    <p>Для запросов вне рабочего времени вы можете написать нам в соцсети:</p>
+                    <a href="https://vk.com/im?entrypoint=community_page&media=&sel=-1458108" class="vk-button">
+                        <span style="margin-right:8px;">📩</span> VK
+                    </a>
+                </div>
+            </div>
+            <!-- Контакты -->
+            <div class="contact-card">
+                <h2><span>Контакты<span></span></span></h2>
+                <div class="contact-item">
+                    <div class="icon">📍</div>
+                    <div>
+                        <p>Адрес</p>
+                        <p>г. Ковров, ул. Маяковского, 19, каб. 241</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📞</div>
+                    <div>
+                        <p>Телефон</p>
+                        <p><a href="tel:+7492326900">+7 (49232) 6-96-00 (доб. 230)</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">✉️</div>
+                    <div>
+                        <p>Email</p>
+                        <p><a href="mailto:studprofkom_kgta@mail.ru">studprofkom_kgta@mail.ru</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- НОВОСТИ -->
+    <section class="announcements-section" id="announcements-section">
+        <div class="announcements-container">
+            <div class="main-news">
+                <div class="main-news-image" onclick="openModal(
+                    'News/Кураторы.jpg',
+                    'Набор на школу кураторства',
+                    'Привет, мы ищем кураторов 🤯<br><br>Открыт набор студентов-кураторов первокурсников! Что сделать, чтобы стать им? Нажимай на синюю кнопку, заполняй форму и пройди обучение.',
+                    'https://vk.com/wall-1458108_13506'
+                )">
+                    <img src="News/Кураторы.jpg" alt="Главная новость">
+                </div>
+                <div class="main-news-text">
+                    <h2><span>Объявления и новости<span></span></span></h2>
+                    <p>Здесь вы найдете важные новости, актуальные объявления и последние события из жизни профсоюзной организации студентов КГТА.</p>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <!-- Карточка 1 -->
+                <div class="card" onclick="openModal('News/Семинар.jpg', 'Семинар ЦФО', 'При поддержке Росмолодёжь.Гранты на площадке Московского Политеха стартует проект, направленный на развитие молодёжной политики и студенческого самоуправления.<br><br>На семинаре будет обсуждаться вовлечённость профсоюзной молодёжи в работу и проекты СКС профсоюза в ЦФО, а также повышение их эффективности и масштабности.<br><br>Лучшие участники по итогам заполненных анкет встретятся на очном семинаре в Москве с 21 по 23 августа 😉.', 'https://vk.com/wall-1458108_13504')">
+                    <div class="news_image"><img src="News/Семинар.jpg" alt="Новость 1"></div>
+                </div>
+                <!-- Карточка 2 -->
+                <div class="card" onclick="openModal('News/СТЛ2025.jpg', 'СТЛ 2025', 'Студенческий лидер ЦФО 🤩<br><br>C 3 по 6 июля в Орле прошел традиционный конкурс «Студенческий лидер ЦФО»<br><br>Помимо конкурса также проходила и образовательная программа, участниками которой стали члены нашей Профсоюзной организации.', 'https://vk.com/wall-1458108_13495')">
+                    <div class="news_image"><img src="News/СТЛ2025.jpg" alt="Новость 2"></div>
+                </div>
+                <!-- Карточка 3 -->
+                <div class="card" onclick="openModal('News/РСМГранты2025.jpg', 'Гранты РСМ 2025', 'Ковровская академия победила в конкурсе «Росмолодёжь.Гранты»! 💥<br><br>КГТА имени В.А. Дегтярева успешно представила свою программу развития молодежной политики вуза «Взгляд в будущее: сохраняем традиции - развиваем страну» на конкурсе «Росмолодёжь.Гранты» и стала одним из победителей!', 'https://vk.com/wall-1458108_13483')">
+                    <div class="news_image"><img src="News/РСМГранты2025.jpg" alt="Новость 3"></div>
+                </div>
+                <!-- Карточка 4 -->
+                <div class="card" onclick="openModal('News/ТХ2025.jpg', 'ТвойХод 2025', 'Твой Ход: Индекс отношения к воспитательной работе 💥 <br><br>В 5 сезоне проекта «Твой Ход» появился обновлённый Индекс отношения студентов к воспитательной работе. Этот опрос покажет, насколько студенты вовлечены в жизнь вуза, чувствуют ли свою значимость и видят ли возможности для самореализации.', 'https://vk.com/wall-1458108_13480')">
+                    <div class="news_image"><img src="News/ТХ2025.jpg" alt="Новость 4"></div>
+                </div>
+                <!-- Карточка 5 -->
+                <div class="card" onclick="openModal('News/Курсанты.jpg', 'Жизнь курсантов', '❗❗ Будущим курсантам ❗❗<br><br>Студентам, изъявившим желание обучаться по программам подготовки офицеров запаса, необходимо прибыть в военный учебный центр для прохождения итоговой конкурсной комиссии!<br><br>Время общее: 09:00 ❗<br><br>2 ИЮЛЯ - факультеты АиЭ и ЭиМ (П-124, У-124, ЭТ-124, И-124, МБ-124, ЭБ-124).<br><br>3 ИЮЛЯ - МТФ (КТ-124, М-124, ТМ-124, НК-124, MP-124).', 'https://vk.com/wall-1458108_13478')">
+                    <div class="news_image"><img src="News/Курсанты.jpg" alt="Новость 5"></div>
+                </div>
+            </div>
+
+            <!-- Модальное окно новостей -->
+            <div id="newsModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 id="modalTitle"></h2>
+                    <img id="modalImage" src="" alt="">
+                    <p id="modalText"></p>
+                    <a id="modalLink" href="#" target="_blank" class="modal-button">Читать далее</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПОДВАЛ -->
+    <footer class="partners-footer">
+        <div class="footer-container">
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <a href="https://vk.com/profkomkgta" target="_blank">
+                        <img src="images/Frame 100.png" alt="Профком">
+                    </a>
+                </div>
+                <div class="partner-logo">
+                    <a href="https://vk.com/kgta_kovrov" target="_blank">
+                        <img src="images/Frame 96.png" alt="КГТА">
+                    </a>
+                </div>
+                <div class="partner-logo">
+                    <a href="https://vk.com/sks_rf" target="_blank">
+                        <img src="images/Frame 97.png" alt="СКС">
+                    </a>
+                </div>
+                <div class="partner-logo">
+                    <a href="https://vk.com/eseur" target="_blank">
+                        <img src="images/Frame 98 (1).png" alt="ОПО">
+                    </a>
+                </div>
+                <div class="partner-logo">
+                    <a href="https://vk.com/eseur33" target="_blank">
+                        <img src="images/Frame 99.png" alt="ОПОВл">
+                    </a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2026 Профсоюз студентов КГТУ им. В.А. Дегтярева. Все права защищены и твои тоже!</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- СКРИПТЫ -->
+    <script>
+        // Меню-бургер
+        function toggleMenu() {
+            document.getElementById("header-nav").classList.toggle("active");
+        }
+
+        function scrollAndClose(targetY) {
+            document.getElementById("header-nav").classList.remove("active");
+            if (typeof targetY === 'number') {
+                window.scrollTo({ top: targetY, behavior: 'smooth' });
+            }
+        }
+
+        // Переключение мемов на мобильных (по клику)
+        function toggleMeme(element) {
+            if (window.innerWidth <= 768) {
+                element.classList.toggle('show-meme');
+            }
+        }
+
+        // Модальное окно новостей
+        function openModal(imageSrc, title, fullText, link) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalText').innerHTML = fullText;
+            document.getElementById('modalLink').href = link;
+            document.getElementById('newsModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Закрытие модалки
+            document.querySelector('.close').onclick = function() {
+                document.getElementById('newsModal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            };
+            window.onclick = function(event) {
+                const modal = document.getElementById('newsModal');
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            };
+        });
+    </script>
+</body>
+</html>
