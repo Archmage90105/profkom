@@ -1,0 +1,493 @@
+/*  
+Theme Name: ПрофсоюзКГТА
+Theme URI:
+Description: Тема для профсоюзкгта.рф
+Version: 1.0
+Author: Yan Kurganov
+Author URI: www.профсоюзкгта.рф
+*/
+
+@charset "utf-8";
+
+
+
+/* CSS Document dbe2e7 c5def2*/
+*{
+	padding:0; margin:0;
+}
+body{
+	
+	background:#DDDBDC  center top no-repeat;
+	}
+h2{
+	font:bold 16px Verdana;color:#3f282f; text-align:center;
+	text-decoration:underline;margin:0 0 10px 0;}
+.main1 {
+	width:970px; margin: 0px auto;
+	}
+.main {
+	width:970px; margin:0 auto;height:250px;
+	}
+	.head{
+		height:250px;
+		}
+		.head a {width:970px;height:250px; margin: 0px auto;}
+		.head h2 {font:italic 24px "Century Gothic"; float:right; color:#fff; 
+		margin:-2px 105px 0 0;
+		}
+			.head a ing{font:normal 36px "Century Gothic"; float:left; color:#fff;text-decoration:none;
+			margin:200px 0 0 31px;
+			}
+.content-main{
+			background:#f5f1f2;border:1px solid #fff; overflow:hidden;
+			border-radius: 15px;
+			-moz-border-radius: 15px;
+			-webkit-border-radius: 15px;
+			}
+	.menu{
+		list-style:none; background:#edece8; overflow:hidden;
+		border-radius: 15px 15px 0 0;
+		-moz-border-radius: 15px 15px 0 0;
+		-webkit-border-radius: 15px 15px 0 0;
+		}
+		.menu li{
+			float:left; background:url(/web/20220401043516im_/http://www.%D0%BF%D1%80%D0%BE%D1%84%D1%81%D0%BE%D1%8E%D0%B7%D0%BA%D0%B3%D1%82%D0%B0.%D1%80%D1%84/wp-content/themes/profkomkgta/images/bg-menu1.jpg) left center no-repeat; padding: 15px 14px;
+			}
+		.menu li:first-child{
+			float;left; padding:15px 14px; background:none;						}
+		.menu li a{
+			font:16px "Century Gothic"; color:#303474; text-decoration:none;font-weight:bold;
+			}
+		.menu li a:hover{
+			font:16px "Century Gothic"; color:#303474; text-decoration:underline;font-weight:bold;
+			}
+		.search-main{
+				float:right;margin:0 20px 0 0;
+				}
+		.search-txt{
+					height:27px; width:200px; background:#f7f7f7; border:1px solid #fff; margin:0 10px 10px 0;
+					border-radius: 2px;
+					-moz-border-radius: 2px;
+					-webkit-border-radius: 2px;
+					}
+		.search-btn{position:relative;top:11px; border:1px solid #bfa694;
+					border-radius: 2px;
+					-moz-border-radius: 2px;
+					-webkit-border-radius: 2px;
+					}
+	.content{
+		width:700px;float:left;margin:0 0 0 20px; top: 50%}
+		.post-name{
+			background: #edece8;border:1px solid #303474; margin:0 0 20px 0;
+			border-radius: 8px;
+			-moz-border-radius: 8px;
+			-webkit-border-radius: 8px;}
+			.post-name h1{
+				font:normal 20px Verdana;background:#dddbdc;
+				border-radius:8px 8px 0 0;
+				-moz-border-radius: 8px 8px 0 0;
+				-webkit-border-radius: 8px 8px 0 0;
+				padding:5px 20px 8px 15px; margin:0 0 5px 0;}
+			.post-name h1 a{
+				font:normal 20px "Century Gothic";color:#303474;text-decoration:none;}
+			.post-name h1 a:hover{
+				font:normal 20px "Century Gothic";color:#303474;text-decoration:underline;}
+			.post-name h1 span{
+					font:normal 13px "Century Gothic"; color:#3f282f; 
+			}
+			.wp-post-image{
+				float:left;margin:0 15px 15px 0;}
+	.post_main{
+		margin:0 15px 15px 15px;
+		height:120px;}
+		.post_main h2{
+				font:bold 16px Verdana;color:#3f282f; text-align:center;
+				text-decoration:underline;margin:0 0 10px 0;}
+		.post_main p {
+			text-align: justify;
+			font:normal 14px Verdana;color:#3f282f;margin:0 0 10px 0;text-indent:30px;}
+		.post_main p a{
+				text-indent:30px;
+				color:#3f282f; text-decoration:underline;
+			}
+			.post_main p a:hover{
+				text-indent:30px;
+				color:#3f282f; text-decoration:none;}
+			.post_main p jpg{
+				color:#3f282f; text-decoration:none;}
+			.post_main ul li{
+				font:normal 14px Verdana;color:#3f282f;margin:0 0 10px 0;text-indent:30px;}
+	.post{
+		margin:0 15px 15px 15px;}
+		.post h2{
+				font:bold 16px Verdana;color:#3f282f; text-align:center;
+				text-decoration:underline;margin:0 0 10px 0;}
+		.post p {
+			text-align: justify;
+			font:normal 14px Verdana;color:#3f282f;margin:0 0 10px 0;text-indent:30px;}
+		.post pno{
+			text-align: justify;
+			font:normal 14px Verdana;color:#3f282f;margin:0 0 10px 0;text-indent:0px;}
+		.post p a{
+				text-indent:30px;
+				color:#3f282f; text-decoration:underline;
+			}
+		.post p o{
+				text-indent:0px;
+				color:#3f282f; text-decoration:underline;
+			}
+			.post p a:hover{
+				text-indent:30px;
+				color:#3f282f; text-decoration:none;}
+			.post p jpg{
+				color:#3f282f; text-decoration:none;}
+			.post ul li{
+				font:normal 14px Verdana;color:#3f282f;margin:0 0 10px 20px;text-indent:5px;}
+		
+				
+	.sidebar{
+		width:225px; float:right; margin:0 0 0 20px;}
+		.vidget{
+			background:##edece8; border:1px solid #303474; margin:0 20px 0 0;
+			border-radius:8px;
+			-moz-border-radius: 8px;
+			-webkit-border-radius: 8px;}
+			.vidget li{
+				list-style:none;}
+			.vidget h2{
+				background:#dddbdc; font: 18px "Century Gothic"; color:#303474; text-align:center; padding: 10px 0;
+				border-radius:8px 8px 0 0;
+				-moz-border-radius: 8px 8px 0 0;
+				-webkit-border-radius: 8px 8px 0 0;}
+				.vidget ul{
+					list-style:none; padding:15px 15px;}
+				.vidget ul li{
+						border-bottom:1px solid #aaa3a4; border-top:1px solid #303474; padding: 5px;
+						font-family:"Century Gothic"; padding:10px 0 10px 15px;}
+				.vidget ul li:first-child{
+						border-top:none;}
+				.vidget ul li:last-child{
+						border-bottom:none;}
+				.vidget ul li a{
+						font:italic 14px "Century Gothic"; color:#000; text-decoration:underline; margin:5px}
+				.vidget ul li a:hover{
+						font:italic 14px "Century Gothic"; color:#000; text-decoration:none;}
+.footer{
+		overflow:hidden;padding:10px 25px;}
+	.cpy{
+		float:left;}
+		.cpy a {
+			font:normal 14px "Century Gothic"; color:#7f4f29;text-decoration:none;}
+		.cpy h1 {
+			font:normal 16px "Century Gothic"; color:#7f4f29;text-decoration:none;}
+		.cpy a:hover{
+				text-decoration:underline;}
+		.cpy p{
+			font:normal 14px "Century Gothic"; color:#000;margin:15px 0 0 0;}
+	.menu-foot{
+		float:right;padding:0 0 0 0px;}
+		.menu-foot p{
+			font:normal 14px "Century Gothic"; color:#000;margin:15px 0 0 0;}
+		.menu-foot a{
+				font: normal 14px "Century Gothic"; color:#7f4f29;text-decoration:none;}
+		.menu-foot h1{
+				font: normal 16px "Century Gothic"; color:#7f4f29;text-decoration:none;}
+		.menu-foot a::hover{
+				text-decoration:underline;}
+		.menu-foot ul{
+				list-style:none;}
+			.menu-foot ul li{
+					list-style:none;}
+				.menu-foot ul li a{
+					font:italic 14px "Century Gothic"; color:#7f4f29; text-decoration:underline;}
+				.menu-foot ul li a:hover{
+					font:italic 14px "Century Gothic"; color:#7f4f29; text-decoration:none;}
+/* slider */
+*{
+	padding:0; margin:0;
+	}
+#slider{
+	background: #b5b5b5;
+	border: 1px solid #3f282f;
+	height: 266px;
+	margin-top: 0px;
+	width: 927px;
+	overflow: hidden;
+	position: relative;
+	margin: 15px auto 25px;
+}
+
+#cyclePager{
+	position: absolute;
+	height: 18px;
+	overflow: hidden;
+	right: 20px;
+	bottom: 20px;
+	z-index: 99;
+}
+
+	#cyclePager a{
+		background: transparent url(/web/20220401043516im_/http://www.%D0%BF%D1%80%D0%BE%D1%84%D1%81%D0%BE%D1%8E%D0%B7%D0%BA%D0%B3%D1%82%D0%B0.%D1%80%D1%84/wp-content/themes/profkomkgta/images/pager-gal.png) 0 0 no-repeat;
+		display: block;
+		float: left;
+		height: 17px;
+		margin-left: 10px;
+		text-indent: -9999px;
+		width: 17px;
+	}
+
+	#cyclePager a:hover,
+	#cyclePager a.activeSlide{background-position: -17px 0;}
+	
+.alignleft,
+img.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 24px;
+	margin-top: 5px;
+}
+.alignright,
+img.alignright {
+	display: inline;
+	float: right;
+	margin-left: 24px;
+	margin-top: 4px;
+}
+.aligncenter,
+img.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* =Comments
+-------------------------------------------- */
+#comments {
+	clear: both;
+}
+#comments .navigation {
+	padding: 0 0 18px 0;
+}
+h3#comments-title,
+h3#reply-title {
+	color: #000;
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+h3#comments-title {
+	padding: 24px 0;
+}
+.commentlist {
+	list-style: none;
+	margin: 0;
+}
+.commentlist li.comment {
+	border-bottom: 1px solid #e7e7e7;
+	line-height: 24px;
+	margin: 0 0 24px 0;
+	padding: 0 0 0 56px;
+	position: relative;
+}
+.commentlist li:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+}
+#comments .comment-body ul,
+#comments .comment-body ol {
+	margin-bottom: 18px;
+}
+#comments .comment-body p:last-child {
+	margin-bottom: 6px;
+}
+#comments .comment-body blockquote p:last-child {
+	margin-bottom: 24px;
+}
+.commentlist ol {
+	list-style: decimal;
+}
+.commentlist .avatar {
+	position: absolute;
+	top: 4px;
+	left: 0;
+}
+.comment-author {
+}
+.comment-author cite {
+	color: #000;
+	font-style: normal;
+	font-weight: bold;
+}
+.comment-author .says {
+	font-style: italic;
+}
+.comment-meta {
+	font-size: 12px;
+	margin: 0 0 18px 0;
+}
+.comment-meta a:link,
+.comment-meta a:visited {
+	color: #888;
+	text-decoration: none;
+}
+.comment-meta a:active,
+.comment-meta a:hover {
+	color: #ff4b33;
+}
+.commentlist .even {
+}
+.commentlist .bypostauthor {
+}
+.reply {
+	font-size: 12px;
+	padding: 0 0 24px 0;
+}
+.reply a,
+a.comment-edit-link {
+	color: #888;
+}
+.reply a:hover,
+a.comment-edit-link:hover {
+	color: #ff4b33;
+}
+.commentlist .children {
+	list-style: none;
+	margin: 0;
+}
+.commentlist .children li {
+	border: none;
+	margin: 0;
+}
+.nopassword,
+.nocomments {
+	display: none;
+}
+#comments .pingback {
+	border-bottom: 1px solid #e7e7e7;
+	margin-bottom: 18px;
+	padding-bottom: 18px;
+}
+.commentlist li.comment+li.pingback {
+	margin-top: -6px;
+}
+#comments .pingback p {
+	color: #888;
+	display: block;
+	font-size: 12px;
+	line-height: 18px;
+	margin: 0;
+}
+#comments .pingback .url {
+	font-size: 13px;
+	font-style: italic;
+}
+/*-----.commentlist{
+			margin:0 0 0 50px;}
+	.comment-body{
+			border: 2px solid #ccc;}------------------------- */
+
+
+
+ #spatho4y{
+		 #spatho4y	.wrapper {
+				width: 100%;
+				min-width: 0px;
+				
+							position: absolute;
+	
+			}
+		 #spatho4y	.carousel div {
+				height: 500px;				
+			}
+		 #spatho4y	.carousel img {
+				min-width: 10%;
+				min-height: 10%;
+				
+				position: absolute;
+			}
+		
+	</head>
+					
+} 
+
+.link {
+    color: blue;
+    text-decoration: underline;
+    cursor: hand;
+    cursor: pointer;
+}
+#test {
+    padding: 10px;
+}
+.link1 {
+    color: blue;
+    text-decoration: underline;
+    cursor: hand;
+    cursor: pointer;
+}
+#test1 {
+    padding: 10px;
+}
+.link2 {
+    color: blue;
+    text-decoration: underline;
+    cursor: hand;
+    cursor: pointer;
+}
+#test2 {
+     padding: 10px;
+}
+
+
+
+.box-gallery{
+                width:940px;!important;
+                margin:0 auto;
+}
+
+.box-gallery ul{
+                list-style:none;
+                margin:0 auto;
+
+}
+.box-gallery ul li{
+                list-style:none;
+                float:left;
+                margin:6px;
+		
+                ~padding:10px;
+}
+.box-gallery h5{
+                font-size: 14px;
+                color:#666;
+                text-align:center;
+                display:block;
+                width:920px;
+                padding:10px 0px 5px 0px;
+                margin:20px auto 10px auto;
+                border-bottom-width: 1px;
+                border-bottom-style: dotted;
+                border-bottom-color: #CCC;
+}
+/*
+     FILE ARCHIVED ON 04:35:16 Apr 01, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 14:16:17 Mar 24, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.505
+  exclusion.robots: 0.019
+  exclusion.robots.policy: 0.008
+  esindex: 0.009
+  cdx.remote: 40.837
+  LoadShardBlock: 75.027 (3)
+  PetaboxLoader3.datanode: 335.457 (5)
+  load_resource: 343.804
+  PetaboxLoader3.resolve: 56.333
+  loaddict: 23.154
+*/

@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профсоюз студентов КГТА им. В.А. Дегтярева</title>
+	<link rel="icon" href="images/favicon2.png" type="image/x-icon">
+    <style>
+		/* Общие стили */
+        :root {
+            --theme-9: #2c3e50;       /* Темно-синий (фон шапки) */
+            --theme-10: #ffffff;      /* Белый (текст) */
+            --spacing-20: 1.25rem;    /* 20px */
+            --spacing-80: 5rem;       /* 80px */
+            --font-xx-large: 2.5rem;  /* 40px */
+        }
+        
+		html {
+            scroll-behavior: smooth;
+        }
+		
+        body {
+            font-family: "Rubik", sans-serif;
+			font-optical-sizing: auto;
+			font-weight: <weight>;
+			font-style: normal;
+            margin: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+				
+        /* Основная шапка (из header.html) */
+        .header-section {
+            background: var(--theme-9);
+            color: var(--theme-10);
+            padding: var(--spacing-20) 0;
+            margin: 0;
+            width: auto;
+        }
+
+        .header-contents {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .site-title {
+            color: var(--theme-10);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+			font-size: 30px;
+        }
+
+        .header-nav {
+            display: flex;
+        }
+
+        .header-nav a {
+            color: var(--theme-10);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: opacity 0.3s;
+        }
+
+        .header-nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Герой-секция (из header-hero.html) */
+        .hero-section {
+            background: var(--theme-9);
+            color: var(--theme-10);
+            text-align: center;
+            padding: var(--spacing-80) 20px;
+            margin: 0;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 1060px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+			font-size: 60px;
+        }
+
+        .hero-description {
+            font-size: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+		p, li {
+			font-size: 18px;
+		}
+		
+		.burger {
+			display: none;
+			font-size: 2rem;
+			background: none;
+			border: none;
+			color: white;
+			cursor: pointer;
+		}
+		
+		.header-logo {
+			position: absolute; 
+			left: 300px; 
+			top: 17px;
+		}
+		
+		.about-image img { 
+			border-radius: 10px;
+			width: 537px;
+			height: 100%;
+			margin: 20px 0 0 0;
+		}
+		
+        /* Адаптация */
+        @media (max-width: 768px) {
+        header {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		nav {
+			margin-top: 10px;
+		}
+
+		nav a {
+			display: block;
+			margin: 5px 0;
+			font-size: 16px;
+		}
+
+		.hero h1 {
+			font-size: 28px;
+			text-align: center;
+		}
+
+		.hero p {
+			font-size: 16px;
+			text-align: center;
+		}
+
+		.section {
+			padding: 30px 10px;
+		}
+
+		.cards,
+		.team {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.card,
+		.team-member {
+			width: 90%;
+			margin-bottom: 20px;
+		}
+
+		.team-member img {
+			width: 120px;
+			height: 120px;
+		}
+
+		.team-member h3 {
+			font-size: 18px;
+		}
+
+		.team-member p {
+			font-size: 14px;
+		}
+
+		footer {
+			text-align: center;
+			font-size: 14px;
+		}
+			
+		.burger {
+			display: block;
+			position: absolute;
+			right: max( 10px, 3vw);
+			top: max( -15px);
+			z-index: 1001;
+			width: clamp(36px, 8vw, 50px); /* адаптивная ширина */
+			height: clamp(36px, 8vw, 50px); /* адаптивная высота */
+			padding: clamp(6px, 2vw, 10px); /* адаптивный padding */
+		}
+
+		.header-nav {
+			display: none;
+			flex-direction: column;
+			background-color: var(--theme-9);
+			width: 100%;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			padding: 10px 0;
+			z-index: 1000;
+		}
+
+		.header-nav a {
+			padding: 10px 20px;
+			font-size: 18px;
+			color: var(--theme-10);
+			text-align: left;
+			width: 100%;
+		}
+
+		.header-nav.active {
+			display: flex;
+		}
+
+		.header-contents {
+			position: relative;
+		}
+	            
+        .hero-section {
+            padding: 24px 20px 48px;
+        }
+            
+        .hero-title {
+            margin-top: 15px;
+			font-size: 40px;
+        }
+		
+		.hero-description {
+			font-size: 20px;
+		}
+		
+		.site-title {
+			font-size: 20px;
+		}
+		
+		.header-logo {
+			position: absolute; 
+			left: 15px; 
+			top: -10px;
+		}
+		
+		.about-image img{ 
+			border-radius: 10px;
+			width: 90vw;
+			height: auto;
+			margin: 0;
+		}
+    }
+    </style>
+</head>
+<script>
+    function toggleMenu() {
+        document.getElementById("header-nav").classList.toggle("active");
+    }
+	function scrollAndClose(targetY) {
+        // Закрываем меню
+        document.getElementById("header-nav").classList.remove("active");
+
+        // Если передано число — прокрутка по Y
+        if (typeof targetY === 'number') {
+            window.scrollTo({
+                top: targetY,
+                behavior: 'smooth'
+            });
+        }
+	}
+</script>
+<body>
+
+    <!-- Основная шапка (из header.html) -->
+    <div class="header-section" id="header-section" style="position: sticky; top: 0; z-index: 1000">
+        <header class="header-contents">
+            <div class = "header-logo" id="header-logo">
+				<img src = "images/Logo.png" style = "width: 40px; height: auto; position: fixed; left: max( 5px, 1vw); top: max( 5px);">
+			</div>
+			
+			<div class="header-group">
+                <a href="https://профсоюзкгта.рф/" class="site-title">Профсоюз студентов КГТА</a>
+            </div>
+            
+            <!-- Бургер-кнопка -->
+			<button class="burger" onclick="toggleMenu()">☰</button>
+
+			<!-- Навигация -->
+			<nav class="header-nav" id="header-nav">
+				<a href="javascript:void(0)" onclick="scrollAndClose(0)">Главная</a>
+				<a href="#about-section" onclick="scrollAndClose()">О нас</a>
+				<a href="#documents-section" onclick="scrollAndClose()">Документы</a>
+				<a href="#team-section" onclick="scrollAndClose()">Команда</a>
+				<a href="#contact-section" onclick="scrollAndClose()">Контакты</a>
+				<a href="#announcements-section" onclick="scrollAndClose()">Новости</a>
+			</nav>
+        </header>
+    </div>
+
+    <!-- Герой-секция (из header-hero.html) -->
+    <div class="hero-section" id="hero-section">
+        <div class="hero-content">
+            <h2 class="hero-title">Профсоюз студентов КГТА имени В.А. Дегтярева</h2>
+            <p class="hero-description">
+                Добро пожаловать на официальный сайт первичной профсоюзной организации 
+                студентов Ковровской Государственной Технологической Академии 
+                имени В. А. Дегтярева
+            </p>
+        </div>
+    </div>
+	
+	<!-- Полноэкранное изображение -->
+	<div class="fullscreen-image">
+		<img src="images/Общее фото.jpg" alt="Фоновое изображение" style="width: 100%; height: 100%; object-fit: cover; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+	</div>
+	
+	<!-- Секция "О нас" -->
+<section class="about-section" style="padding: 80px 20px; max-width: 1400px; margin: 0 auto;" id="about-section">
+	<div class="about-columns" style="display: flex; flex-wrap: wrap; gap: 60px; align-items: center;">
+    
+		<!-- Текстовая колонка -->
+		<div class="about-text" style="flex: 1; min-width: 300px;">
+			<h2 style="font-size: 2.5rem; color: #2c3e50; margin-bottom: 30px; position: relative;">
+			<span style="display: inline-block; position: relative;">
+			О нас
+			<span style="position: absolute; bottom: -10px; left: 0; width: 60px; height: 3px; background: #3498db;"></span>
+			</span>
+			</h2>
+      
+			<div class="about-content" style="display: flex; flex-direction: column; gap: 15px;">
+				<p style="margin: 0; line-height: 1.6; color: #555;">
+				<strong style="color: #2c3e50;">Плыть по течению, оставить в воспоминаниях лучшие годы жизни или сделать их по-настоящему насыщенными?</strong> 
+				Мы выбираем второй вариант и предлагаем вам присоединиться!
+				</p>
+        
+				<p style="margin: 0; line-height: 1.6; color: #555;">
+				<strong style="color: #2c3e50;">Мы объединились для того, чтобы вместе решать важные вопросы</strong>, 
+				защищать права студентов и создавать комфортные условия для учебы и развития.
+				</p>
+        
+				<p style="margin: 0; line-height: 1.6; color: #555;">
+				<strong style="color: #2c3e50;">Союз студентов КГТА существует более 30 лет</strong> 
+				и за это время помог тысячам студентов реализовать свои идеи и защитить свои права.
+				</p>
+			</div>
+		</div>
+    
+		<!-- Колонка с изображением -->
+		<div class="about-image">
+			<img src="images/student desk in a classroom.jpg" alt="Student desk in a classroom" 
+             style="display: block; transition: transform 0.5s; align-items: center;">
+		</div>
+	</div>
+</section>
+
+<!-- Cекция "Документы" -->
+<section class="documents-section" style="padding: 80px 20px 80px 20px; background: #f8f9fa;" id="documents-section">
+	<div style="max-width: 1400px; margin: 0 auto;">
+	
+		<!-- Заголовок секции -->
+		<h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 60px; position: relative;">
+		  <span style="display: inline-block; position: relative;">
+			Документы для студентов
+			<span style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: #3498db;"></span>
+		  </span>
+		</h2>
+
+		<!-- Контейнер для карточек -->
+		<div class="documents-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+      
+		  <!-- Карточка 1: Материальная помощь -->
+		  <div class="document-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; height: 100%; display: flex; flex-direction: column;">
+			  <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
+				<h3 style="font-size: 1.5rem; color: #2c3e50; margin-top: 0; margin-bottom: 20px;">Материальная помощь</h3>
+				<img src="images/letter_18599206.png" alt="Иконка материальной помощи" style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 20px;">
+				<div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px; flex-grow: 1;">
+				  <p style="margin: 0; line-height: 1.6; color: #555;">Материальная поддержка может быть оказана студентам, оказавшимся в трудной жизненной ситуации.</p>
+				  <p style="margin: 0; line-height: 1.6; color: #555;">На получение материальной помощи имеют право все студенты, состоящие в профсоюзе.</p>
+				  <p style="margin: 0; line-height: 1.6; color: #555;">Решение об оказании материальной помощи принимает профсоюзный комитет.</p>
+				</div>
+				<a href="https://vk.com/s/v1/doc/_kxuZvVbze4AUHzEAO6In7MXvE5BvYbKDZicD8FBoyJcDhloeIo" target="_blank" 
+				   style="display: inline-block; padding: 12px 25px; background: #3498db; color: white; 
+				   text-decoration: none; border-radius: 5px; font-weight: bold; text-align: center; 
+				   transition: background 0.3s; align-self: flex-start; margin-top: auto;">
+				  Открыть
+				</a>
+			  </div>
+			</div>
+
+		  <!-- Карточка 2: ПГАС -->
+		  <div class="document-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;  height: 100%; display: flex; flex-direction: column;">
+			<div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
+			  <h3 style="font-size: 1.5rem; color: #2c3e50; margin-top: 0; margin-bottom: 20px;">ПГАС</h3>
+			  <img src="images/letter_18599206.png" alt="Иконка повышенной стипендии" style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 20px;">
+			  <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px;">
+				<p style="margin: 0; line-height: 1.6; color: #555;">Повышенную стипендию могут получить студенты, достигшие успехов в различных видах деятельности.</p>
+				<p style="margin: 0; line-height: 1.6; color: #555;">Повышенная академическая стипендия назначается за достижения в:</p>
+				<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; color: #555;">
+				  <li>учебной деятельности</li>
+				  <li>научно-исследовательской работе</li>
+				  <li>общественной деятельности</li>
+				  <li>культурно-творческой деятельности</li>
+				  <li>спортивных достижениях</li>
+				</ul>
+			  </div>
+			  <a href="https://vk.com/s/v1/doc/tqwCkUGDaly9EBU03q0TUjuLsVlM7_IxGmNpdz2BtMa1RGA9WNA" target="_blank" 
+				   style="display: inline-block; padding: 12px 25px; background: #3498db; color: white; 
+				   text-decoration: none; border-radius: 5px; font-weight: bold; text-align: center; 
+				   transition: background 0.3s; align-self: flex-start; margin-top: auto;">
+				Открыть
+			  </a>
+			</div>
+		  </div>
+
+		  <!-- Карточка 3: Вступление в профсоюз -->
+		  <div class="document-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;  height: 100%; display: flex; flex-direction: column;">
+			<div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
+			  <h3 style="font-size: 1.5rem; color: #2c3e50; margin-top: 0; margin-bottom: 20px;">Вступление в профсоюз</h3>
+			  <img src="images/letter_18599206.png" alt="Иконка вступления в профсоюз" style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 20px;">
+			  <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px;">
+				<p style="margin: 0; line-height: 1.6; color: #555;">Стань частью профсоюзной организации и получи доступ ко всем возможностям и поддержке.</p>
+				<p style="margin: 0; line-height: 1.6; color: #555;">Члены профсоюза имеют право на материальную помощь, льготы и юридическую поддержку.</p>
+			  </div>
+			  <a href="https://vk.com/s/v1/doc/vErrEYmptqw2zclF4sv4wcNiKRaSSj0YU0W-IgPR4h-2eP7_pJo" target="_blank" style="display: inline-block; padding: 12px 25px; background: #3498db; color: white; 
+				   text-decoration: none; border-radius: 5px; font-weight: bold; text-align: center; 
+				   transition: background 0.3s; align-self: flex-start; margin-top: auto;">
+				Открыть
+			  </a>
+			</div>
+		  </div>
+		</div>
+	</div>
+</section>
+
+<!-- Секция "Команда" -->
+<section class="team-section" style="padding: 80px 20px 80px 20px; background: #ffffff;" id="team-section">
+	<div style="max-width: 1400px; margin: 0 auto;">
+	
+		<!-- Заголовок секции -->
+		<h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 60px; position: relative;">
+		  <span style="display: inline-block; position: relative;">
+			Наша Команда
+			<span style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: #3498db;"></span>
+		  </span>
+		</h2>
+
+		<!-- Контейнер для членов команды -->
+		<div class="team-container" style="display: flex; flex-direction: column; gap: 40px;">
+      
+		   <!-- Первая строка -->
+		  <div class="team-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; justify-items: center;">
+		  
+			<!-- Член команды 1 -->
+			<div class="team-member" style="text-align: center; max-width: 280px;">
+			  <div style="position: relative; width: 250px; height: 400px; margin: 0 auto 20px; border-radius: 10%; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+				<a href = "https://vk.com/mc_toliq" target="_blank">
+					<img src="images/Толя.jpg" alt="Имя Фамилия" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"> 
+				</a>
+			  </div>
+			  <h3 style="font-size: 1.3rem; color: #2c3e50; margin: 0 0 5px;">Жук Анатолий </h3>
+			  <p style="color: #3498db; font-weight: 500; margin: 0 0 10px;">Председатель</p>
+			  <p style="color: #555; line-height: 1.5;">Координирует работу профкома студентов</p>
+			</div>
+
+			<!-- Член команды 2 -->
+			<div class="team-member" style="text-align: center; max-width: 280px;">
+			<div style="position: relative; width: 250px; height: 400px; margin: 0 auto 20px; border-radius: 10%; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+				<a href = "https://vk.com/anna_asotova" target="_blank">
+					<img src="images/Асотова.jpg" alt="Имя Фамилия" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"> 
+				</a>
+			  </div>
+			  <h3 style="font-size: 1.3rem; color: #2c3e50; margin: 0 0 5px;">Асотова Анна</h3>
+			  <p style="color: #3498db; font-weight: 500; margin: 0 0 10px;">Заместитель председателя</p>
+			  <p style="color: #555; line-height: 1.5;">Курирует правовую и организацонную работу</p>
+			</div>
+
+			<!-- Член команды 3 -->
+			<div class="team-member" style="text-align: center; max-width: 280px;">
+			<div style="position: relative; width: 250px; height: 400px; margin: 0 auto 20px; border-radius: 10%; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+				<a href = "https://vk.com/di.mlsva" target="_blank">
+					<img src="images/Диана.jpg" alt="Имя Фамилия" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"> 
+				</a>
+			  </div>
+			  <h3 style="font-size: 1.3rem; color: #2c3e50; margin: 0 0 5px;">Мальцева Диана</h3>
+			  <p style="color: #3498db; font-weight: 500; margin: 0 0 10px;">Заместитель председателя</p>
+			  <p style="color: #555; line-height: 1.5;">Курирует информационную работу, взаимодействует с председателями профбюро</p>
+			</div>
+
+			<!-- Член команды 4 -->
+			<div class="team-member" style="text-align: center; max-width: 280px;">
+			<div style="position: relative; width: 250px; height: 400px; margin: 0 auto 20px; border-radius: 10%; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+				<a href = "https://vk.com/yuriforcce" target="_blank">
+					<img src="images/Ярик.jpg" alt="Имя Фамилия" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"> 
+				</a>
+			  </div>
+			  <h3 style="font-size: 1.3rem; color: #2c3e50; margin: 0 0 5px;">Горячевский Ярослав</h3>
+			  <p style="color: #3498db; font-weight: 500; margin: 0 0 10px;">Председатель совета обучающихся</p>
+			  <p style="color: #555; line-height: 1.5;">Курирует деятельность совета обучающихся вуза, в который входят представители всех студенческих объединений</p>
+			</div>
+		  </div>
+	  
+		  <!-- Вторая строка -->
+		  <div class="team-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; justify-items: center;">
+		  
+			<!-- Член команды 5 -->
+			<div class="team-member" style="text-align: center; max-width: 280px;">
+			  <div style="position: relative; width: 250px; height: 400px; margin: 0 auto 20px; border-radius: 10%; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+				<a href = "https://vk.com/id562826217" target="_blank">
+					<img src="images/Бобровникова.jpg" alt="Имя Фамилия" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"> 
+				</a>
+			  </div>
+			  <h3 style="font-size: 1.3rem; color: #2c3e50; margin: 0 0 5px;">Бобровникова Анна</h3>
+			  <p style="color: #3498db; font-weight: 500; margin: 0 0 10px;">Председатель культурно-массовой комиссии</p>
+			  <p style="color: #555; line-height: 1.5;">Курирует организацию досуговых мероприятий для студентов</p>
+			</div>
+      
+			<!-- Член команды 6 -->
+			<div class="team-member" style="text-align: center; max-width: 280px;">
+			  <div style="position: relative; width: 250px; height: 400px; margin: 0 auto 20px; border-radius: 10%; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+				<a href = "https://vk.com/ksyeniaa" target="_blank">
+					<img src="images/Ксюша.jpg" alt="Имя Фамилия" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"> 
+				</a>
+			  </div>
+			  <h3 style="font-size: 1.3rem; color: #2c3e50; margin: 0 0 5px;">Меркулова Ксения</h3>
+			  <p style="color: #3498db; font-weight: 500; margin: 0 0 10px;">Председатель информационной комиссии</p>
+			  <p style="color: #555; line-height: 1.5;">Курирует социальные сети организации</p>
+			</div>
+      
+			<!-- Член команды 7 -->
+			<div class="team-member" style="text-align: center; max-width: 280px;">
+			  <div style="position: relative; width: 250px; height: 400px; margin: 0 auto 20px; border-radius: 10%; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+				<a href = "https://vk.com/ergashevaregina" target="_blank">
+					<img src="images/Регина.jpg" alt="Имя Фамилия" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"> 
+				</a>
+			  </div>
+			  <h3 style="font-size: 1.3rem; color: #2c3e50; margin: 0 0 5px;">Эргашева Регина</h3>
+			  <p style="color: #3498db; font-weight: 500; margin: 0 0 10px;">Секретарь</p>
+			  <p style="color: #555; line-height: 1.5;">Ведёт протоколы собраний профкома</p>
+			</div>
+	
+			<!-- Член команды 8 -->
+			<div class="team-member" style="text-align: center; max-width: 280px;">
+			  <div style="position: relative; width: 250px; height: 400px; margin: 0 auto 20px; border-radius: 10%; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+				<a href = "https://vk.com/id507691698" target="_blank">
+					<img src="images/Дима.jpg" alt="Имя Фамилия" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"> 
+				</a>
+			  </div>
+			  <h3 style="font-size: 1.3rem; color: #2c3e50; margin: 0 0 5px;">Морсин Дмтирий</h3>
+			  <p style="color: #3498db; font-weight: 500; margin: 0 0 10px;">Председатель студсовета общежития</p>
+			  <p style="color: #555; line-height: 1.5;">Координирует деятельность студенческого совета в общежитии академии</p>
+			</div>
+		  </div>
+	  
+		  <!-- Третья строка -->
+		  <div class="team-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; justify-items: center;">
+		  
+			<!-- Член команды 9 -->
+			<div class="team-member" style="text-align: center; max-width: 280px;">
+			  <div style="position: relative; width: 250px; height: 400px; margin: 0 auto 20px; border-radius: 10%; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+				<a href = "https://vk.com/newfpatek" target="_blank">
+					<img src="images/Сашка.jpg" alt="Имя Фамилия" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"> 
+				</a>
+			  </div>
+			  <h3 style="font-size: 1.3rem; color: #2c3e50; margin: 0 0 5px;">Коровин Александр</h3>
+			  <p style="color: #3498db; font-weight: 500; margin: 0 0 10px;">Председатель профбюро фАиЭ</p>
+			  <p style="color: #555; line-height: 1.5;">Курирует деятельность организации на факультете автоматики и электроники</p>
+			</div>
+      
+			<!-- Член команды 10 -->
+			<div class="team-member" style="text-align: center; max-width: 280px;">
+			  <div style="position: relative; width: 250px; height: 400px; margin: 0 auto 20px; border-radius: 10%; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+				<a href = "https://vk.com/ilya_chervyakov" target="_blank">
+					<img src="images/Илья.jpg" alt="Имя Фамилия" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"> 
+				</a>
+			  </div>
+			  <h3 style="font-size: 1.3rem; color: #2c3e50; margin: 0 0 5px;">Червяков Илья</h3>
+			  <p style="color: #3498db; font-weight: 500; margin: 0 0 10px;">Председатель профбюро МТФ</p>
+			  <p style="color: #555; line-height: 1.5;">Курирует деятельность организации на механико-технологическом факультете</p>
+			</div>
+      
+			<!-- Член команды 11 -->
+			<div class="team-member" style="text-align: center; max-width: 280px;">
+			  <div style="position: relative; width: 250px; height: 400px; margin: 0 auto 20px; border-radius: 10%; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+				<a href = "https://vk.com/alone_ice" target="_blank">
+					<img src="images/Андрей.jpg" alt="Имя Фамилия" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"> 
+				</a>
+			  </div>
+			  <h3 style="font-size: 1.3rem; color: #2c3e50; margin: 0 0 5px;">Глухов Андрей</h3>
+			  <p style="color: #3498db; font-weight: 500; margin: 0 0 10px;">Председатель профбюро фЭиМ</p>
+			  <p style="color: #555; line-height: 1.5;">Курирует деятельность организации на факультете экономики и менеджмента</p>
+			</div>
+      
+			<!-- Член команды 12 -->
+			<div class="team-member" style="text-align: center; max-width: 280px;">
+			  <div style="position: relative; width: 250px; height: 400px; margin: 0 auto 20px; border-radius: 10%; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+				<a href = "https://vk.com/video137523692_168022180" target="_blank">
+					<img src="images/I94mv9K-wB2wvQyaO98wkw2vK-I3_iYRgazVem8eLc1kkKO2uZoHpGBZ4oYddwixDzNo9FvCTyvo2wFDIzltg3EI.jpg" alt="Имя Фамилия" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"> 
+				</a>
+			  </div>
+			  <h3 style="font-size: 1.3rem; color: #2c3e50; margin: 0 0 5px;">Степанов Роман</h3>
+			  <p style="color: #3498db; font-weight: 500; margin: 0 0 10px;">Председатель профбюро ЭМК</p>
+			  <p style="color: #555; line-height: 1.5;">Курирует деятельность организации в энергомеханическом колледже</p>
+			</div>
+		  </div>
+      
+		</div>
+	</div>
+	<style>
+	  /* Анимации при наведении */
+	  .team-member:hover .member-overlay {
+		opacity: 1;
+	  }
+	  .team-member:hover img {
+		transform: scale(1.05);
+	  }
+	  .team-member a:hover {
+		transform: scale(1.2);
+	  }
+	</style>
+</section>
+
+<!-- Блок с графиком работы -->
+<section class="contact-section" style="padding: 80px 20px 80px 20px; background: #f8f9fa;" id="contact-section">
+
+	<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
+    
+		<div class="contact-card" style="flex: 1; min-width: 300px; background: white; border-radius: 10px; padding: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+		  <h2 style="font-size: 2rem; color: #2c3e50; margin-top: 0; margin-bottom: 25px; position: relative;">
+			<span style="display: inline-block; position: relative;">
+			  Наш график работы
+			  <span style="position: absolute; bottom: -10px; left: 0; width: 60px; height: 3px; background: #3498db;"></span>
+			</span>
+		  </h2>
+      
+		  <div style="display: flex; flex-direction: column; gap: 15px;">
+			<div style="display: flex; align-items: flex-start; gap: 15px;">
+			  <div style="font-size: 1.5rem; color: #3498db;">🕘</div>
+			  <div>
+				<p style="font-weight: 600; margin: 0 0 5px 0; color: #2c3e50;">Понедельник - пятница</p>
+				<p style="margin: 0; color: #555;">с 09:00 до 17:00 (обед 12:00 - 13:00)</p>
+			  </div>
+			</div>
+        
+			<div style="display: flex; align-items: flex-start; gap: 15px;">
+			  <div style="font-size: 1.5rem; color: #3498db;">🚪</div>
+			  <div>
+				<p style="font-weight: 600; margin: 0 0 5px 0; color: #2c3e50;">Суббота, воскресенье</p>
+				<p style="margin: 0; color: #555;">выходной</p>
+			  </div>
+			</div>
+		  </div>
+      
+		  <div style="margin-top: 30px; padding: 20px; background: #f0f7ff; border-radius: 8px;">
+			<p style="margin: 0 0 15px 0; color: #555; font-style: italic;">
+			  Для запросов вне рабочего времени вы можете написать нам в соцсети:
+			</p>
+			<div style="display: flex; gap: 15px;">
+			  <a href="https://vk.com/im?entrypoint=community_page&media=&sel=-1458108" style="display: inline-flex; align-items: center; padding: 10px 20px; 
+				 background: #0077ff; color: white; text-decoration: none; border-radius: 5px; 
+				 font-weight: bold; transition: all 0.3s;">
+				<span style="margin-right: 8px;">📩</span> VK
+			  </a>
+			</div>
+		  </div>
+		</div>
+    
+    <!-- Блок с контактной информацией -->
+		<div class="contact-card" style="flex: 1; min-width: 300px; background: white; border-radius: 10px; padding: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+			  <h2 style="font-size: 2rem; color: #2c3e50; margin-top: 0; margin-bottom: 25px; position: relative;">
+				<span style="display: inline-block; position: relative;">
+				  Контакты
+				  <span style="position: absolute; bottom: -10px; left: 0; width: 60px; height: 3px; background: #3498db;"></span>
+				</span>
+			  </h2>
+      
+			<div style="display: flex; flex-direction: column; gap: 20px;">
+				<div style="display: flex; align-items: flex-start; gap: 15px;">
+				  <div style="font-size: 1.5rem; color: #3498db;">📍</div>
+				  <div>
+					<p style="font-weight: 600; margin: 0 0 5px 0; color: #2c3e50;">Адрес</p>
+					<p style="margin: 0; color: #555;">г. Ковров, ул. Маяковского, 19, каб. 241</p>
+				  </div>
+				</div>
+        
+				<div style="display: flex; align-items: flex-start; gap: 15px;">
+				  <div style="font-size: 1.5rem; color: #3498db;">📞</div>
+				  <div>
+					<p style="font-weight: 600; margin: 0 0 5px 0; color: #2c3e50;">Телефон</p>
+					<p style="margin: 0; color: #555;">
+					  <a href="tel:+7492326900" style="color: #3498db; text-decoration: none;">+7 (49232) 6-96-00 (доб. 230)</a>
+					</p>
+				  </div>
+				</div>
+			
+				<div style="display: flex; align-items: flex-start; gap: 15px;">
+				  <div style="font-size: 1.5rem; color: #3498db;">✉️</div>
+				  <div>
+					<p style="font-weight: 600; margin: 0 0 5px 0; color: #2c3e50;">Email</p>
+					<p style="margin: 0; color: #555;">
+					  <a href="mailto:studprofkom_kgta@mail.ru" style="color: #3498db; text-decoration: none;">studprofkom_kgta@mail.ru</a>
+					</p>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Cекция "Новости" -->
+<section class="announcements-section" style="padding: 100px 20px 100px 20px; background: #ffffff;" id="announcements-section">
+
+	<div style="max-width: 1400px; margin: 0 auto;">
+    
+	  <!-- Верхний блок с текстом и изображением (Главная новость) -->
+		<div style="display: flex; flex-wrap: wrap; gap: 60px; align-items: center; margin-bottom: 60px;">
+
+		  <!-- Изображение -->
+			<div style="flex: 1; min-width: 300px;">
+				<div class="main-news-image" onclick="openModal(
+				  'News/Кураторы.jpg',
+				  'Набор на школу кураторства',
+				  'Привет, мы ищем кураторов 🤯<br><br>Открыт набор студентов-кураторов первокурсников! Что сделать, чтобы стать им? Нажимай на синюю кнопку, заполняй форму и пройди обучение.',
+				  'https://vk.com/wall-1458108_13506'
+				)" style="border-radius: 10px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer;">
+				  <img src="News/Кураторы.jpg" alt="Главная новость" style="width: 100%; height: auto; display: block; transition: transform 0.4s ease;">
+				</div>
+			</div>
+
+		  <!-- Текстовый контент -->
+			<div style="flex: 1; min-width: 300px;">
+				<h2 style="font-size: 2.5rem; color: #2c3e50; margin-top: 0; margin-bottom: 20px; position: relative;">
+				  <span style="display: inline-block; position: relative;">
+					Объявления и новости
+					<span style="position: absolute; bottom: -10px; left: 0; width: 80px; height: 3px; background: #3498db;"></span>
+				  </span>
+				</h2>
+
+				<p style="font-size: 1.1rem; line-height: 1.6; color: #555; margin-bottom: 0;">
+				  Здесь вы найдете важные новости, актуальные объявления и последние события 
+				  из жизни профсоюзной организации студентов КГТА.
+				</p>
+			</div>
+		</div> 
+	</div>
+	
+	<!-- Галерея изображений -->
+	<div class="gallery">
+
+		<!-- Карточка 1 -->
+		<div class="card" onclick="openModal(
+			'News/Семинар.jpg',
+			'Семинар ЦФО',
+			'При поддержке Росмолодёжь.Гранты на площадке Московского Политеха стартует проект, направленный на развитие молодёжной политики и студенческого самоуправления.<br><br>На семинаре будет обсуждаться вовлечённость профсоюзной молодёжи в работу и проекты СКС профсоюза в ЦФО, а также повышение их эффективности и масштабности.<br><br>Лучшие участники по итогам заполненных анкет встретятся на очном семинаре в Москве с 21 по 23 августа 😉.',
+			'https://vk.com/wall-1458108_13504'
+		  )">
+			<div class="news_image">
+			  <img src="News/Семинар.jpg" alt="Новость 1">
+			</div>
+		</div>
+
+		 <!-- Карточка 2 -->
+		<div class="card" onclick="openModal(
+			'News/СТЛ2025.jpg',
+			'СТЛ 2025',
+			'Студенческий лидер ЦФО 🤩<br><br>C 3 по 6 июля в Орле прошел традиционный конкурс «Студенческий лидер ЦФО»<br><br>Помимо конкурса также проходила и образовательная программа, участниками которой стали члены нашей Профсоюзной организации.',
+			'https://vk.com/wall-1458108_13495'
+		  )">
+			<div class="news_image">
+			  <img src="News/СТЛ2025.jpg" alt="Новость 2">
+			</div>
+		</div>
+
+		 <!-- Карточка 3 -->
+		<div class="card" onclick="openModal(
+			'News/РСМГранты2025.jpg',
+			'Гранты РСМ 2025',
+			'Ковровская академия победила в конкурсе «Росмолодёжь.Гранты»! 💥<br><br>КГТА имени В.А. Дегтярева успешно представила свою программу развития молодежной политики вуза «Взгляд в будущее: сохраняем традиции - развиваем страну» на конкурсе «Росмолодёжь.Гранты» и стала одним из победителей!',
+			'https://vk.com/wall-1458108_13483'
+		  )">
+			<div class="news_image">
+			  <img src="News/РСМГранты2025.jpg" alt="Новость 3">
+			</div>
+		</div>
+
+		 <!-- Карточка 4 -->
+		<div class="card" onclick="openModal(
+			'News/ТХ2025.jpg',
+			'ТвойХод 2025',
+			'Твой Ход: Индекс отношения к воспитательной работе 💥 <br><br>В 5 сезоне проекта «Твой Ход» появился обновлённый Индекс отношения студентов к воспитательной работе. Этот опрос покажет, насколько студенты вовлечены в жизнь вуза, чувствуют ли свою значимость и видят ли возможности для самореализации.',
+			'https://vk.com/wall-1458108_13480'
+		  )">
+			<div class="news_image">
+			  <img src="News/ТХ2025.jpg" alt="Новость 4">
+			</div>
+		</div>
+
+		 <!-- Карточка 5 -->
+		<div class="card" onclick="openModal(
+			'News/Курсанты.jpg',
+			'Жизнь курсантов',
+			'❗❗ Будущим курсантам ❗❗<br><br>Студентам, изъявившим желание обучаться по программам подготовки офицеров запаса, необходимо прибыть в военный учебный центр для прохождения итоговой конкурсной комиссии!<br><br>Время общее: 09:00 ❗<br><br>2 ИЮЛЯ - факультеты АиЭ и ЭиМ (П-124, У-124, ЭТ-124, И-124, МБ-124, ЭБ-124).<br><br>3 ИЮЛЯ - МТФ (КТ-124, М-124, ТМ-124, НК-124, MP-124).',
+			'https://vk.com/wall-1458108_13478'
+		  )">
+			<div class="news_image">
+			  <img src="News/Курсанты.jpg" alt="Новость 5">
+			</div>
+		</div>
+
+		 <!-- Модальное окно -->
+		<div id="newsModal" class="modal">
+			 <div class="modal_content">
+				<span class="close">&times;</span>
+				<h2 id="modalTitle"></h2>
+				<img id="modalImage" src="" alt="">
+				<p id="modalText"></p>
+				<a id="modalLink" href="#" target="_blank" class="modal_button">Читать далее</a>
+			 </div>
+		</div>
+	
+		<!-- Стили -->
+		<style>
+
+		.main-news-image:hover img {
+		  transform: scale(1.05);
+		}
+
+		.gallery {
+		  display: grid;
+		  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		  gap: 30px;
+		}
+
+		.card {
+		  position: relative;
+		  border-radius: 15px;
+		  border: 1px solid #eee;
+		  overflow: hidden;
+		  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+		  background: white;
+		  display: flex;
+		  flex-direction: column;
+		  cursor: pointer;
+		  transition: transform 0.2s;
+		}
+
+		.card:hover {
+		  transform: scale(1.01);
+		}
+
+		.news_image {
+		  width: 374px;
+		  height: 220px;
+		  overflow: hidden;
+		  position: relative;
+		}
+
+		.news_image img {
+		  width: 100%;
+		  height: 100%;
+		  object-fit: cover;
+		  transition: transform 0.4s ease;
+		}
+
+		.card:hover .news_image img {
+		  transform: scale(1.05);
+		}
+
+		.news_text {
+		  border-radius: 15px;
+		  padding: 0 15px;
+		  max-height: 0;
+		  overflow: hidden;
+		  transition: max-height 0.5s ease, padding 0.3s ease;
+		  position: absolute;
+		  top: 100%;
+		  left: 0;
+		  right: 0;
+		  background: white;
+		  z-index: 10;
+		  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+		}
+
+		.card:hover .news_text {
+		  max-height: 300px;
+		  padding: 15px;
+		  z-index: 20;
+		}
+
+		.news_text p {
+		  margin: 0 0 10px 0;
+		  color: #333;
+		}
+
+		.news_text a {
+		  display: inline-block;
+		  padding: 8px 15px;
+		  background: #3498db;
+		  color: white;
+		  text-decoration: none;
+		  border-radius: 4px;
+		  font-size: 14px;
+		  margin-bottom: 15px;
+		}
+
+		/* Модальное окно */
+		.modal {
+		  display: none;
+		  position: fixed;
+		  z-index: 9999;
+		  left: 0;
+		  top: 0;
+		  width: 100vw;
+		  height: 100vh;
+		  background-color: rgba(0,0,0,0.6);
+		  backdrop-filter: blur(4px);
+		  justify-content: center;
+		  align-items: center;
+		}
+
+		.modal_content {
+		  background-color: #fff;
+		  margin: auto;
+		  padding: 25px;
+		  border-radius: 15px;
+		  width: 90%;
+		  max-width: 700px;
+		  max-height: 90vh;
+		  overflow-y: auto;
+		  position: relative;
+		  animation: fadeIn 0.3s ease;
+		  box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+		}
+
+		.modal_content img {
+		  width: 100%;
+		  height: auto;
+		  margin-bottom: 15px;
+		  border-radius: 10px;
+		}
+
+		.modal_content h2 {
+		  margin-top: 0;
+		  font-size: 24px;
+		  color: #222;
+		}
+
+		.modal_content p {
+		  font-size: 16px;
+		  color: #333;
+		  line-height: 1.6;
+		}
+
+		.modal_button {
+		  display: inline-block;
+		  margin-top: 15px;
+		  padding: 10px 20px;
+		  background-color: #3498db;
+		  color: white;
+		  text-decoration: none;
+		  border-radius: 6px;
+		  font-weight: bold;
+		  transition: background 0.3s;
+		}
+
+		.modal_button:hover {
+		  background-color: #217dbb;
+		}
+
+		.close {
+		  position: absolute;
+		  top: 10px;
+		  right: 20px;
+		  font-size: 28px;
+		  font-weight: bold;
+		  cursor: pointer;
+		  color: #888;
+		}
+
+		.close:hover {
+		  color: #000;
+		}
+
+		@keyframes fadeIn {
+		  from { opacity: 0; transform: scale(0.95); }
+		  to { opacity: 1; transform: scale(1); }
+		}
+		</style>
+
+		<!-- JS -->
+		<script>
+		function openModal(imageSrc, title, fullText, link) {
+		  document.getElementById('modalImage').src = imageSrc;
+		  document.getElementById('modalTitle').textContent = title;
+		  document.getElementById('modalText').innerHTML = fullText;
+		  document.getElementById('modalLink').href = link;
+		  document.getElementById('newsModal').style.display = 'flex';
+		  document.body.style.overflow = 'hidden';
+		}
+
+		document.querySelector('.close').onclick = function () {
+		  document.getElementById('newsModal').style.display = 'none';
+		  document.body.style.overflow = 'auto';
+		};
+
+		window.onclick = function (event) {
+		  const modal = document.getElementById('newsModal');
+		  if (event.target === modal) {
+			modal.style.display = 'none';
+			document.body.style.overflow = 'auto';
+		  }
+		};
+		</script>
+
+	</div>
+</section>
+
+<!-- Подвал сайта -->
+<footer>
+	<footer class="partners-footer" style="padding: 40px 20px; background: #2c3e50;">
+		<div style="max-width: 1400px; margin: 0 auto;">
+		
+				<!-- Заголовок при необходимости -->
+			<div class="partners-grid" style="display: grid; 
+			  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+			  gap: 30px; 
+			  align-items: center;
+			  justify-content: center;">
+		  
+				<!-- Партнер 1 -->
+				<div class="partner-logo">
+				  <a href="https://vk.com/profkomkgta" target="_blank">
+					<div style="display: flex; justify-content: center; padding: 15px; background: white; border-radius: 8px; height: 100px;">
+					  <img src="images/Frame 100.png" alt="Профком"
+						   style="max-width: 100%; max-height: 100%; object-fit: contain;
+								  filter: grayscale(100%) opacity(80%); transition: all 0.3s;">
+					</div>
+				  </a>
+				</div>
+
+				<!-- Партнер 2 -->
+				<div class="partner-logo">
+				  <a href="https://vk.com/kgta_kovrov" target="_blank">
+					<div style="display: flex; justify-content: center; padding: 15px; background: white; border-radius: 8px; height: 100px;">
+					  <img src="images/Frame 96.png" alt="КГТА"
+						   style="max-width: 100%; max-height: 100%; object-fit: contain;
+								  filter: grayscale(100%) opacity(80%); transition: all 0.3s;">
+					</div>
+				  </a>
+				</div>
+
+				<!-- Партнер 3 -->
+				<div class="partner-logo">
+				  <a href="https://vk.com/sks_rf" target="_blank">
+					<div style="display: flex; justify-content: center; padding: 15px; background: white; border-radius: 8px; height: 100px;">
+					  <img src="images/Frame 97.png" alt="СКС"
+						   style="max-width: 100%; max-height: 100%; object-fit: contain;
+								  filter: grayscale(100%) opacity(80%); transition: all 0.3s;">
+					</div>
+				  </a>
+				</div>
+
+				<!-- Партнер 4 -->
+				<div class="partner-logo">
+				  <a href="https://vk.com/eseur" target="_blank">
+					<div style="display: flex; justify-content: center; padding: 15px; background: white; border-radius: 8px; height: 100px;">
+					  <img src="images/Frame 98 (1).png" alt="ОПО"
+						   style="max-width: 100%; max-height: 100%; object-fit: contain;
+								  filter: grayscale(100%) opacity(80%); transition: all 0.3s;">
+					</div>
+				  </a>
+				</div>
+
+				<!-- Партнер 5 -->
+				<div class="partner-logo">
+				  <a href="https://vk.com/eseur33" target="_blank">
+					<div style="display: flex; justify-content: center; padding: 15px; background: white; border-radius: 8px; height: 100px;">
+					  <img src="images/Frame 99.png" alt="ОПОВл"
+						   style="max-width: 100%; max-height: 100%; object-fit: contain;
+								  filter: grayscale(100%) opacity(80%); transition: all 0.3s;">
+					</div>
+				  </a>
+				</div>
+			</div>
+		
+				<!-- Копирайт и дополнительная информация -->
+				<div style="text-align: center; color: rgba(255,255,255,0.7); margin-top: 50px; 
+							font-size: 0.9rem; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+				  <p>© 2025 Профсоюз студентов КГТА им. В.А. Дегтярева. Все права защищены и твои тоже!</p>
+				</div>
+		</div>
+	</footer>
+
+	<style>
+	  /* Анимации при наведении */
+	  .partner-logo:hover img {
+		filter: grayscale(0%) opacity(100%) !important;
+		transform: scale(1.05);
+	  }
+	  
+	  /* Адаптация для мобильных */
+	  @media (max-width: 768px) {
+		.partners-grid {
+		  grid-template-columns: repeat(3, 1fr));
+		  gap: 15px;
+		}
+	  }
+	  
+	  @media (max-width: 480px) {
+		.partners-grid {
+		  grid-template-columns: repeat(2, 1fr));
+		}
+	  }
+	</style>
+</script>
+</footer>
+</body>
+</html>
